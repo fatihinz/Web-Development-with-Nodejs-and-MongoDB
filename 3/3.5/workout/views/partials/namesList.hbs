@@ -1,0 +1,21 @@
+<script id="namesListTemplate" type="x-template">
+    <ul>
+        \{{#each names}}
+            <li>\{{this}}</li>
+        \{{/each}}
+    </ul>
+</script>
+
+<div id="namesPlaceholder">Names list template loaded</div>
+
+<script>
+    function renderTemplate() {
+        var source = document.getElementById('namesListTemplate').innerHTML;
+        var template = Handlebars.compile(source);
+        var html = template({names: ['Andrew', 'Cindy', 'Brian']});
+
+        document.getElementById('namesPlaceholder').innerHTML = html;
+    }
+
+    setTimeout(renderTemplate, 1000);
+</script>

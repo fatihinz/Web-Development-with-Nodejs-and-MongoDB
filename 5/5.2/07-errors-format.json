@@ -1,0 +1,10 @@
+{
+    "errors": [
+        {
+            "code": "EVT-NOT-FOUND",
+            "status": 404,
+            "title": "Event not found",
+            "details": "Failed to find the event"
+        }
+    ]
+}

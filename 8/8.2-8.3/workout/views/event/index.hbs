@@ -1,0 +1,36 @@
+<p>
+    {{formatRelative event.time}}
+    <strong>@</strong> {{event.venue.name}}, {{event.venue.city}}<br />
+    <strong>{{event.attendeeCount}}</strong> people attended
+</p>
+
+<p>&nbsp;</p>
+
+{{#if user}}
+    <div>
+        {{#unless hasFeedback}}
+            <div>
+                Have you attended the event?
+
+                <a href="#" class="btn btn-success" id="button-leave-feedback">Leave feedback</a>
+            </div>
+        {{/unless}}
+
+        <div class="{{#unless hasFeedback}}hidden{{/unless}}">
+            {{> event/feedbackForm}}
+        </div>
+    </div>
+{{/if}}
+
+<p>&nbsp;</p>
+
+<div class="panel panel-success" id="attendees">
+    <div class="panel-heading">List of attendees</div>
+    <div class="panel-body">
+        <ul class="list-group">
+            {{#each event.attendees}}
+                <li class="list-group-item">{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

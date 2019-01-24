@@ -1,0 +1,11 @@
+<h3>{{title}}</h3>
+
+{{#with user}}
+<p>
+    Full name: {{firstName}} {{lastName}}<br />
+    {{#with contacts}}
+    Twitter: {{twitter}}<br />
+    {{/with}}
+    Email: {{contacts.email}}
+</p>
+{{/with}}
